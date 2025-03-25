@@ -6,7 +6,8 @@ require("lazy").setup({
 		import = "blu.plugins"
 	},
 	install = {},
-	checker = { enabled = true },
+	checker = { enabled = true, notify = false },
 })
 
 require("blu.lsp")
+require("blu.cmp_setup")

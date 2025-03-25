@@ -48,7 +48,7 @@ mConf.setup( {
 	ensure_installed = { "rust_analyzer", "lua_ls", "clangd", "hyprls", "ltex", "pyright", "harper_ls", "yamlls", "spectral"}
 })
 
-local on_attach = function(client, bufnr)
+local binds_on_attach = function(client, bufnr)
 	local opts = {buffer = bufnr, remap = false}
 
 	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -64,6 +64,52 @@ local on_attach = function(client, bufnr)
 end
 
 -- lsp config after this
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 lsp.lua_ls.setup {
-	on_attach = on_attach
+  capabilities = capabilities,
+	on_attach = binds_on_attach
+}
+
+lsp.pyright.setup {
+  capabilities = capabilities,
+  on_attach = binds_on_attach
+}
+lsp.rust_analyzer.setup {
+  capabilities = capabilities,
+  on_attach = binds_on_attach
+}
+
+lsp.hyprls.setup {
+  capabilities = capabilities,
+  on_attach = binds_on_attach
+}
+
+lsp.clangd.setup {
+  capabilities = capabilities,
+  on_attach = binds_on_attach
+}
+
+lsp.harper_ls.setup {
+  capabilities = capabilities,
+  on_attach = binds_on_attach
+}
+
+lsp.ltex.setup {
+  capabilities = capabilities,
+  on_attach = binds_on_attach
+}
+
+lsp.ltex.setup {
+  capabilities = capabilities,
+  on_attach = binds_on_attach
+}
+
+lsp.yamlls.setup {
+  capabilities = capabilities,
+  on_attach = binds_on_attach
+}
+
+lsp.spectral.setup {
+  capabilities = capabilities,
+  on_attach = binds_on_attach
 }
