@@ -91,7 +91,7 @@ lsp.clangd.setup {
 
 lsp.harper_ls.setup {
   capabilities = capabilities,
-  on_attach = binds_on_attach
+  on_attach = binds_on_attach,
 }
 
 lsp.ltex.setup {
